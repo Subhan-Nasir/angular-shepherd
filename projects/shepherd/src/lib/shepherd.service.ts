@@ -27,6 +27,7 @@ export class ShepherdService {
    * Get the tour object and call back
    */
   back() {
+    console.log("BACK BUTTON PRESSED");
     this.tourObject.back();
   }
 
@@ -55,6 +56,7 @@ export class ShepherdService {
    * Advance the tour to the next step
    */
   next() {
+    console.log("NEXT BUTTON PRESSED");
     this.tourObject.next();
   }
 
