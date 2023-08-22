@@ -19,6 +19,7 @@ export class ShepherdService {
   tourName = undefined;
   tourObject: Shepherd.Tour = null;
   exitOnEsc = true;
+  enableProgressBar = false;
 
   constructor () {
   }
@@ -151,7 +152,8 @@ export class ShepherdService {
       keyboardNavigation: this.keyboardNavigation,
       tourName: this.tourName,
       useModalOverlay: this.modal,
-      exitOnEsc: this.exitOnEsc
+      exitOnEsc: this.exitOnEsc,
+      enableProgressBar: this.enableProgressBar
     });
 
     tourObject.on('complete', this.onTourFinish.bind(this, 'complete'));
