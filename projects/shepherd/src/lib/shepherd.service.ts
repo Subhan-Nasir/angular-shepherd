@@ -3,6 +3,8 @@ import Shepherd from 'shepherd.js';
 import { elementIsHidden } from './utils/dom';
 import { makeButton } from './utils/buttons';
 import Step from 'shepherd.js/src/types/step';
+import { isNgTemplate } from '@angular/compiler';
+import { log } from 'console';
 @Injectable({
     providedIn: 'root'
 })
@@ -96,6 +98,19 @@ export class ShepherdService {
             }
             this.tourObject.addStep(step);
         });
+
+        console.log("NEW STEP ADDED");
+        console.log(this.tourObject.steps.map(item => item.id));
+        
+    }
+
+
+    removeCurrentStep(){
+        console.log("REMOVE CURRENT STEP CALLED");
+        const currentStepId = this.tourObject.getCurrentStep().id;
+        this.tourObject.removeStep(currentStepId);
+        console.log("UPDATED STEPS");
+        console.log(this.tourObject.steps.map(item => item.id));
     }
 
 
