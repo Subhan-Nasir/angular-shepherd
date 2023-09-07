@@ -12,7 +12,10 @@ export class ShepherdService {
     confirmCancel = false;
     confirmCancelMessage: string = null;
     defaultStepOptions: Step.StepOptions = {};
+    enableProgressBar = false;
+    progressBarStyle: string = "";
     errorTitle = null;
+    exitOnEsc = true;
     isActive = false;
     keyboardNavigation = true;
     messageForUser: string = null;
@@ -20,8 +23,6 @@ export class ShepherdService {
     requiredElements = [];
     tourName = undefined;
     tourObject: Shepherd.Tour = null;
-    exitOnEsc = true;
-    enableProgressBar = false;
 
     constructor() {
     }
@@ -184,7 +185,8 @@ export class ShepherdService {
             tourName: this.tourName,
             useModalOverlay: this.modal,
             exitOnEsc: this.exitOnEsc,
-            enableProgressBar: this.enableProgressBar
+            enableProgressBar: this.enableProgressBar,
+            progressBarStyle: this.progressBarStyle ?? "",
         });
 
         tourObject.on('complete', this.onTourFinish.bind(this, 'complete'));
