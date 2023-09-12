@@ -3,8 +3,7 @@ import Shepherd from 'shepherd.js';
 import { elementIsHidden } from './utils/dom';
 import { makeButton } from './utils/buttons';
 import Step from 'shepherd.js/src/types/step';
-import { isNgTemplate } from '@angular/compiler';
-import { log } from 'console';
+
 @Injectable({
     providedIn: 'root'
 })
